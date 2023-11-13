@@ -88,20 +88,42 @@ header .btn-mobile {
 
 .s-hero .text h1::before {
   content: " ";
-  width: 100%;
   max-width: 59.9rem;
   height: 2.2rem;
-  background: url("../imgs/line-title.svg") no-repeat center center;
+  background: url("../imgs/line-title.svg") no-repeat left center;
   position: absolute;
   bottom: -0.6rem;
   left: 3.9rem;
   z-index: -1;
+  animation: drawLine 3s .5s ease-in forwards;
+}
+
+@keyframes drawLine {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 .s-hero .text .arrow {
   position: absolute;
   bottom: 1.7rem;
   left: 5.5rem;
+  animation: arrowFloat 6s ease-in-out infinite;
+}
+
+@keyframes arrowFloat {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(15px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
 }
 
 .s-hero .ilustra {
@@ -220,6 +242,7 @@ footer .main-area .left {
 }
 
 footer .main-area .left p {
+  color: var(--gray-600);
   max-width: 27.9rem;
   margin-top: 2.4rem;
   font-size: 1.6rem;
